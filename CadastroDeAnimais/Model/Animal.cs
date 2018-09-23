@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CadastroDeAnimais.Model
 {
     class Animal
     {
+        public int Id { get; set; }
+        [Key]
+        public string Nome { get; set; }
+        public decimal Peso { get; set; }
+        public int Altura { get; set; }
+        public int? EspecieId { get; set; }
+
+        public virtual Especie Especie { get; set; }
     }
 }

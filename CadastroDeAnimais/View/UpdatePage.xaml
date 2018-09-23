@@ -1,11 +1,11 @@
-﻿<Window x:Class="CadastroDeAnimais.InsertPage"
+﻿<Window x:Class="CadastroDeAnimais.View.UpdatePage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CadastroDeAnimais"
+        xmlns:local="clr-namespace:CadastroDeAnimais.View"
         mc:Ignorable="d"
-        Title="InsertPage" Height="450" Width="300
+        Title="UpdatePage" Height="450" Width="300
         ">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="117,10,0,0" TextWrapping="Wrap" Text="Animal" VerticalAlignment="Top"/>
@@ -22,9 +22,8 @@
                 <ComboBoxItem>Teste</ComboBoxItem>
             </ComboBox.Items>
         </ComboBox>
-        <Button x:Name="insertBtn" Content="Gravar" HorizontalAlignment="Left" Margin="162,235,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="updateBtn" Content="Gravar" HorizontalAlignment="Left" Margin="162,235,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="clearBtn" Content="Limpar" HorizontalAlignment="Left" Margin="39,235,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
- 
