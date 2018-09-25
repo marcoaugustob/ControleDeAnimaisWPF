@@ -4,8 +4,8 @@ namespace CadastroDeAnimais.Model
 {
     class Animal
     {
-        public int Id { get; set; }
         [Key]
+        public int Id { get; set; }
         public string Nome { get; set; }
         public decimal Peso { get; set; }
         public int Altura { get; set; }

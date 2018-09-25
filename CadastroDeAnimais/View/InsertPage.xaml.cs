@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CadastroDeAnimais.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,26 @@ namespace CadastroDeAnimais
     /// </summary>
     public partial class InsertPage : Window
     {
+        AnimalDBContext _db = new AnimalDBContext();
+
         public InsertPage()
         {
             InitializeComponent();
+        }
+
+        private void insertBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Animal newAnimal = new Animal()
+            {
+                Nome = nomeTextBox.Text,
+                Altura = Convert.ToInt32(alturaTextBox.Text),
+                Peso = Convert.ToDecimal(pesoTextBox.Text),
+                EspecieId = Convert.ToInt32(especieComboBox.Text)
+            };
+            _db.Animais.Add(newAnimal);
+            _db.SaveChanges();
+            MainWindow.dataGrid.ItemsSource = _db.Animais.ToList();
+            this.Hide();
         }
     }
 }

@@ -16,13 +16,10 @@
         <TextBlock  HorizontalAlignment="Left" Margin="22,143,0,0" TextWrapping="Wrap" Text="Altura(cm)" VerticalAlignment="Top"/>
         <TextBox x:Name="alturaTextBox" HorizontalAlignment="Left" Height="23" Margin="148,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="22,178,0,0" TextWrapping="Wrap" Text="Espécie" VerticalAlignment="Top"/>
-        <ComboBox x:Name="especieComboBox" HorizontalAlignment="Left" Margin="148,176,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBox.Items>
-                <ComboBoxItem>Teste</ComboBoxItem>
-                <ComboBoxItem>Teste</ComboBoxItem>
-            </ComboBox.Items>
+        <ComboBox x:Name="especieComboBox" ItemsSource="{Binding Especies}" SelectedValue="{Binding Especie.Id}" HorizontalAlignment="Left" Margin="148,176,0,0" VerticalAlignment="Top" Width="120">
+
         </ComboBox>
-        <Button x:Name="insertBtn" Content="Gravar" HorizontalAlignment="Left" Margin="162,235,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="insertBtn" Content="Gravar" HorizontalAlignment="Left" Margin="162,235,0,0" VerticalAlignment="Top" Width="75" Click="insertBtn_Click"/>
         <Button x:Name="clearBtn" Content="Limpar" HorizontalAlignment="Left" Margin="39,235,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>

@@ -4,8 +4,8 @@ namespace CadastroDeAnimais.Model
 {
     class Especie
     {
-        public int Id { get; set; }
         [Key]
+        public int Id { get; set; }
         public string Nome { get; set; }
     }
 }
