@@ -32,8 +32,7 @@ namespace CadastroDeAnimais.View
             Animal originalAnimal = _db.Animais.FirstOrDefault(x => x.Id == Id);
             nomeTextBox.Text = originalAnimal.Nome;
             pesoTextBox.Text = originalAnimal.Peso.ToString();
-            alturaTextBox.Text = originalAnimal.Altura.ToString();
-            especieComboBox.Uid = originalAnimal.EspecieId.ToString();
+            especieComboBox.SelectedValue = originalAnimal.EspecieId.ToString();
         }
 
         private void updateBtn_Click(object sender, RoutedEventArgs e)
@@ -41,7 +40,6 @@ namespace CadastroDeAnimais.View
             Animal updateAnimal = _db.Animais.FirstOrDefault(x => x.Id == Id);
             updateAnimal.Nome = nomeTextBox.Text;
             updateAnimal.Peso = Convert.ToDecimal(pesoTextBox.Text);
-            updateAnimal.Altura = Convert.ToInt32(alturaTextBox.Text);
             updateAnimal.EspecieId = Convert.ToInt32(especieComboBox.Uid);
 
 

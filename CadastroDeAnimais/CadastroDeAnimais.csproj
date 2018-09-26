@@ -64,13 +64,13 @@
     </ApplicationDefinition>
     <Compile Include="AnimalDBContext.cs" />
     <Compile Include="AnimalRepository.cs" />
-    <Compile Include="Migrations\201809240230009_initial.cs" />
-    <Compile Include="Migrations\201809240230009_initial.Designer.cs">
-      <DependentUpon>201809240230009_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201809260154546_initial.cs" />
+    <Compile Include="Migrations\201809260154546_initial.Designer.cs">
+      <DependentUpon>201809260154546_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809240242155_IdPrimaryKey.cs" />
-    <Compile Include="Migrations\201809240242155_IdPrimaryKey.Designer.cs">
-      <DependentUpon>201809240242155_IdPrimaryKey.cs</DependentUpon>
+    <Compile Include="Migrations\201809260203172_second.cs" />
+    <Compile Include="Migrations\201809260203172_second.Designer.cs">
+      <DependentUpon>201809260203172_second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="View\UpdatePage.xaml.cs">
@@ -116,11 +116,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201809240230009_initial.resx">
-      <DependentUpon>201809240230009_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809260154546_initial.resx">
+      <DependentUpon>201809260154546_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809240242155_IdPrimaryKey.resx">
-      <DependentUpon>201809240242155_IdPrimaryKey.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809260203172_second.resx">
+      <DependentUpon>201809260203172_second.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -32,9 +32,8 @@ namespace CadastroDeAnimais
             Animal newAnimal = new Animal()
             {
                 Nome = nomeTextBox.Text,
-                Altura = Convert.ToInt32(alturaTextBox.Text),
                 Peso = Convert.ToDecimal(pesoTextBox.Text),
-                EspecieId = Convert.ToInt32(especieComboBox.Text)
+                EspecieId = Convert.ToInt32(especieComboBox.SelectedValue)
             };
             _db.Animais.Add(newAnimal);
             _db.SaveChanges();

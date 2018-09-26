@@ -13,17 +13,15 @@
         <TextBox x:Name="nomeTextBox" HorizontalAlignment="Left" Height="23" Margin="148,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="22,102,0,0" TextWrapping="Wrap" Text="Peso" VerticalAlignment="Top"/>
         <TextBox x:Name="pesoTextBox" HorizontalAlignment="Left" Height="23" Margin="148,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock  HorizontalAlignment="Left" Margin="22,143,0,0" TextWrapping="Wrap" Text="Altura(cm)" VerticalAlignment="Top"/>
-        <TextBox x:Name="alturaTextBox" HorizontalAlignment="Left" Height="23" Margin="148,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="22,178,0,0" TextWrapping="Wrap" Text="Espécie" VerticalAlignment="Top"/>
-        <ComboBox x:Name="especieComboBox" HorizontalAlignment="Left" Margin="148,176,0,0" VerticalAlignment="Top" Width="120">
+        <TextBlock HorizontalAlignment="Left" Margin="20,132,0,0" TextWrapping="Wrap" Text="Espécie" VerticalAlignment="Top"/>
+        <ComboBox x:Name="especieComboBox" HorizontalAlignment="Left" Margin="146,130,0,0" VerticalAlignment="Top" Width="120">
             <ComboBox.Items>
                 <ComboBoxItem>Teste</ComboBoxItem>
                 <ComboBoxItem>Teste</ComboBoxItem>
             </ComboBox.Items>
         </ComboBox>
-        <Button x:Name="updateBtn" Content="Gravar" HorizontalAlignment="Left" Margin="162,235,0,0" VerticalAlignment="Top" Width="75" Click="updateBtn_Click"/>
-        <Button x:Name="clearBtn" Content="Limpar" HorizontalAlignment="Left" Margin="39,235,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="updateBtn" Content="Gravar" HorizontalAlignment="Left" Margin="160,189,0,0" VerticalAlignment="Top" Width="75" Click="updateBtn_Click"/>
+        <Button x:Name="clearBtn" Content="Limpar" HorizontalAlignment="Left" Margin="37,189,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

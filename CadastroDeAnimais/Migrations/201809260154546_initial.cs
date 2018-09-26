@@ -11,32 +11,31 @@ namespace CadastroDeAnimais.Migrations
                 "dbo.Animals",
                 c => new
                     {
-                        Nome = c.String(nullable: false, maxLength: 128),
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
+                        Nome = c.String(),
                         Peso = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Altura = c.Int(nullable: false),
                         EspecieId = c.Int(),
-                        Especie_Nome = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.Nome)
-                .ForeignKey("dbo.Especies", t => t.Especie_Nome)
-                .Index(t => t.Especie_Nome);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Especies", t => t.EspecieId)
+                .Index(t => t.EspecieId);
             
             CreateTable(
                 "dbo.Especies",
                 c => new
                     {
-                        Nome = c.String(nullable: false, maxLength: 128),
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
+                        Nome = c.String(),
                     })
-                .PrimaryKey(t => t.Nome);
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Animals", "Especie_Nome", "dbo.Especies");
-            DropIndex("dbo.Animals", new[] { "Especie_Nome" });
+            DropForeignKey("dbo.Animals", "EspecieId", "dbo.Especies");
+            DropIndex("dbo.Animals", new[] { "EspecieId" });
             DropTable("dbo.Especies");
             DropTable("dbo.Animals");
         }
