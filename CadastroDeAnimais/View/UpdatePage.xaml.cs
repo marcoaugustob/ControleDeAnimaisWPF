@@ -40,7 +40,7 @@ namespace CadastroDeAnimais.View
             Animal updateAnimal = _db.Animais.FirstOrDefault(x => x.Id == Id);
             updateAnimal.Nome = nomeTextBox.Text;
             updateAnimal.Peso = Convert.ToDecimal(pesoTextBox.Text);
-            updateAnimal.EspecieId = Convert.ToInt32(especieComboBox.Uid);
+            updateAnimal.EspecieId = Convert.ToInt32(especieComboBox.Text);
 
 
             _db.SaveChanges();
