@@ -1,19 +1,9 @@
 ﻿using CadastroDeAnimais.Model;
 using CadastroDeAnimais.View;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CadastroDeAnimais
 {
@@ -45,18 +35,32 @@ namespace CadastroDeAnimais
 
         private void UpdateClick(object sender, RoutedEventArgs e)
         {
-            int Id = (MyDataGrid.SelectedItem as Animal).Id;
-            UpdatePage Upage = new UpdatePage(Id);
-            Upage.ShowDialog();
+            try
+            {
+                int Id = (MyDataGrid.SelectedItem as Animal).Id;
+                UpdatePage Upage = new UpdatePage(Id);
+                Upage.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível atualizar!");
+            }
         }
 
         private void DeleteClick(object sender, RoutedEventArgs e)
         {
-            int Id = (MyDataGrid.SelectedItem as Animal).Id;
-            var deleteAnimal = _db.Animais.FirstOrDefault(x => x.Id == Id);
-            _db.Animais.Remove(deleteAnimal);
-            _db.SaveChanges();
-            MyDataGrid.ItemsSource = _db.Animais.ToList();
+            try
+            {
+                int Id = (MyDataGrid.SelectedItem as Animal).Id;
+                var deleteAnimal = _db.Animais.FirstOrDefault(x => x.Id == Id);
+                _db.Animais.Remove(deleteAnimal);
+                _db.SaveChanges();
+                MyDataGrid.ItemsSource = _db.Animais.ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível deletar");
+            }
         }
     }
 }

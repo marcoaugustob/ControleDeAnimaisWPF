@@ -1,4 +1,5 @@
 ﻿using CadastroDeAnimais.Model;
+using CadastroDeAnimais.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,6 +28,7 @@ namespace CadastroDeAnimais
         public InsertPage()
         {
             InitializeComponent();
+            DataContext = new AnimalViewModel();
         }
 
         private void insertBtn_Click(object sender, RoutedEventArgs e)
@@ -35,7 +37,7 @@ namespace CadastroDeAnimais
             {
                 Nome = nomeTextBox.Text,
                 Peso = Convert.ToDecimal(pesoTextBox.Text),
-                EspecieId = Convert.ToInt32(especieComboBox.SelectedValue)
+                EspecieId = 2
             };
             _db.Animais.Add(newAnimal);
             _db.SaveChanges();

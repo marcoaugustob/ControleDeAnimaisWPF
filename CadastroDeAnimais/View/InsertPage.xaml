@@ -14,7 +14,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="22,102,0,0" TextWrapping="Wrap" Text="Peso" VerticalAlignment="Top"/>
         <TextBox x:Name="pesoTextBox" HorizontalAlignment="Left" Height="23" Margin="148,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="22,138,0,0" TextWrapping="Wrap" Text="Espécie" VerticalAlignment="Top"/>
-        <ComboBox x:Name="especieComboBox" ItemsSource="{Binding ListaEspecies}" SelectedItem="{Binding Especie}" SelectedValue="Id"  DisplayMemberPath="Nome" HorizontalAlignment="Left" Margin="148,136,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="especieComboBox" ItemsSource="{Binding ListEspecies}" SelectedItem="{Binding Especie}" SelectedValue="Id"  DisplayMemberPath="Nome" HorizontalAlignment="Left" Margin="148,136,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="insertBtn" Content="Gravar" HorizontalAlignment="Left" Margin="162,195,0,0" VerticalAlignment="Top" Width="75" Click="insertBtn_Click"/>
         <Button x:Name="clearBtn" Content="Limpar" HorizontalAlignment="Left" Margin="39,195,0,0" VerticalAlignment="Top" Width="75"/>
 

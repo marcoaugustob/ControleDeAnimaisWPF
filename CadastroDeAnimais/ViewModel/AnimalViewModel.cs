@@ -6,11 +6,14 @@ namespace CadastroDeAnimais.ViewModel
 {
     class AnimalViewModel : INotifyPropertyChanged
     {
+
+        #region Propriedades
+
         private ObservableCollection<Especie> _listEspecies;
         AnimalRepository animalRepos = new AnimalRepository();
 
 
-        public ObservableCollection<Especie> ListEspecie
+        public ObservableCollection<Especie> ListEspecies
         {
             get { return _listEspecies; }
 
@@ -37,7 +40,8 @@ namespace CadastroDeAnimais.ViewModel
 
             }
         }
-
+        #endregion
+        
         private void Initialize()
         {
             this._listEspecies = new ObservableCollection<Especie>();

@@ -1,17 +1,8 @@
 ﻿using CadastroDeAnimais.Model;
+using CadastroDeAnimais.ViewModel;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CadastroDeAnimais.View
 {
@@ -27,6 +18,8 @@ namespace CadastroDeAnimais.View
         public UpdatePage(int animalId)
         {
             InitializeComponent();
+            DataContext = new AnimalViewModel();
+
             Id = animalId;
 
             Animal originalAnimal = _db.Animais.FirstOrDefault(x => x.Id == Id);
@@ -40,7 +33,7 @@ namespace CadastroDeAnimais.View
             Animal updateAnimal = _db.Animais.FirstOrDefault(x => x.Id == Id);
             updateAnimal.Nome = nomeTextBox.Text;
             updateAnimal.Peso = Convert.ToDecimal(pesoTextBox.Text);
-            updateAnimal.EspecieId = Convert.ToInt32(especieComboBox.Text);
+            updateAnimal.EspecieId = 2;
 
 
             _db.SaveChanges();
