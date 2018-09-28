@@ -33,18 +33,32 @@ namespace CadastroDeAnimais
 
         private void insertBtn_Click(object sender, RoutedEventArgs e)
         {
-            Animal newAnimal = new Animal()
+            try
             {
-                Nome = nomeTextBox.Text,
-                Peso = Convert.ToDecimal(pesoTextBox.Text),
-                EspecieId = 2
-            };
-            _db.Animais.Add(newAnimal);
-            _db.SaveChanges();
-            MainWindow.dataGrid.ItemsSource = _db.Animais.ToList();
-            this.Hide();
+                var selected = (especieComboBox.SelectedItem as Especie).Id;
+                Animal newAnimal = new Animal()
+                {
+                    Nome = nomeTextBox.Text,
+                    Peso = Convert.ToDecimal(pesoTextBox.Text),
+                    EspecieId = selected
+                };
+                _db.Animais.Add(newAnimal);
+                _db.SaveChanges();
+                MainWindow.dataGrid.ItemsSource = _db.Animais.ToList();
+                this.Hide();
+            }
+            catch
+            {
+                MainWindow.dataGrid.ItemsSource = _db.Animais.ToList();
+                this.Hide();
+            }
         }
 
-      
+        private void clearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            nomeTextBox.Text = "";
+            pesoTextBox.Text = "";
+            especieComboBox.SelectedIndex = -1;
+        }
     }
 }

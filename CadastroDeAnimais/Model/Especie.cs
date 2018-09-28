@@ -2,7 +2,7 @@
 
 namespace CadastroDeAnimais.Model
 {
-    class Especie
+   public class Especie
     {
         [Key]
         public int Id { get; set; }

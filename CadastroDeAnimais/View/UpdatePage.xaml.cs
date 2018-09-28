@@ -19,26 +19,34 @@ namespace CadastroDeAnimais.View
         {
             InitializeComponent();
             DataContext = new AnimalViewModel();
-
+           
             Id = animalId;
 
             Animal originalAnimal = _db.Animais.FirstOrDefault(x => x.Id == Id);
             nomeTextBox.Text = originalAnimal.Nome;
             pesoTextBox.Text = originalAnimal.Peso.ToString();
-            especieComboBox.SelectedValue = originalAnimal.EspecieId.ToString();
+            (DataContext as AnimalViewModel).Especie = originalAnimal.Especie;
+            //especieComboBox.Text = originalAnimal.Especie.Nome;
         }
 
         private void updateBtn_Click(object sender, RoutedEventArgs e)
         {
+            var selected = (especieComboBox.SelectedValue as Especie).Id;
             Animal updateAnimal = _db.Animais.FirstOrDefault(x => x.Id == Id);
             updateAnimal.Nome = nomeTextBox.Text;
             updateAnimal.Peso = Convert.ToDecimal(pesoTextBox.Text);
-            updateAnimal.EspecieId = 2;
-
+            updateAnimal.EspecieId = Convert.ToInt32(selected);
 
             _db.SaveChanges();
             MainWindow.dataGrid.ItemsSource = _db.Animais.ToList();
             this.Hide();
+        }
+
+        private void clearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            nomeTextBox.Text = "";
+            pesoTextBox.Text = "";
+            especieComboBox.SelectedIndex = -1;
         }
     }
 }

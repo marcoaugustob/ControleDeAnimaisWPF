@@ -20,7 +20,7 @@ namespace CadastroDeAnimais.ViewModel
             set
             {
                 _listEspecies = value;
-                this.NotifyPropertyChanged("ListaEspecies");
+                this.NotifyPropertyChanged("ListEspecies");
             }
         }
 
@@ -41,7 +41,18 @@ namespace CadastroDeAnimais.ViewModel
             }
         }
         #endregion
-        
+
+
+        #region Construtor
+
+        public AnimalViewModel()
+        {
+            this.Initialize();
+        }
+
+        #endregion
+
+
         private void Initialize()
         {
             this._listEspecies = new ObservableCollection<Especie>();

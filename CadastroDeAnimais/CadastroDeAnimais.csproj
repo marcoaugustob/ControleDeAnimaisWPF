@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201809272246241_third.Designer.cs">
       <DependentUpon>201809272246241_third.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809280002030_quarta.cs" />
+    <Compile Include="Migrations\201809280002030_quarta.Designer.cs">
+      <DependentUpon>201809280002030_quarta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ViewModel\AnimalViewModel.cs" />
     <Compile Include="View\UpdatePage.xaml.cs">
@@ -129,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809272246241_third.resx">
       <DependentUpon>201809272246241_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809280002030_quarta.resx">
+      <DependentUpon>201809280002030_quarta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

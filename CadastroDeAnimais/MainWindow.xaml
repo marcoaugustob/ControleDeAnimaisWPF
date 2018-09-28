@@ -9,10 +9,10 @@
     <DockPanel>
         <DataGrid x:Name="MyDataGrid" x:FieldModifier="public" AutoGenerateColumns="False" ColumnWidth="*">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
-                <DataGridTextColumn Header="Peso" Binding="{Binding Peso}"/>
-                <DataGridTextColumn Header="Especie" Binding="{Binding EspecieId}"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Peso" Binding="{Binding Peso}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Especie" Binding="{Binding Especie.Nome}" IsReadOnly="True"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>

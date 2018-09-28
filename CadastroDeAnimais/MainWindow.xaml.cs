@@ -29,8 +29,17 @@ namespace CadastroDeAnimais
 
         private void InsertClick(object sender, RoutedEventArgs e)
         {
-            InsertPage Ipage = new InsertPage();
-            Ipage.ShowDialog();
+            try
+            {
+                InsertPage Ipage = new InsertPage();
+                Ipage.ShowDialog();
+                MessageBox.Show("Sucesso!");
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível Salvar!");
+
+            }
         }
 
         private void UpdateClick(object sender, RoutedEventArgs e)
@@ -40,6 +49,8 @@ namespace CadastroDeAnimais
                 int Id = (MyDataGrid.SelectedItem as Animal).Id;
                 UpdatePage Upage = new UpdatePage(Id);
                 Upage.ShowDialog();
+                MessageBox.Show("Sucesso!");
+
             }
             catch
             {
